@@ -1,9 +1,9 @@
 let baseUrlPrefix = '';
 let baseFilePrefix = '';
-const hostApiDev = 'https://retail-store-api.longdanet.com';
-const hostApiTrial = 'https://retail-store-api.longdanet.com';
-const hostApiProd = 'https://retail-store-api.longdanet.com';
-const file = 'https://retail-store-api.longdanet.com';
+const hostApiDev = '';
+const hostApiTrial = '';
+const hostApiProd = '';
+const file = '';
 const accountInfo = wx.getAccountInfoSync();
 const env = accountInfo.miniProgram.envVersion;
 
