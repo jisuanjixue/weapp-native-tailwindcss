@@ -1,0 +1,47 @@
+.wux-scroll-number {
+    /* display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: #fff;
+    color: rgba(0, 0, 0, 0.65);
+    font-size: 26rpx; */
+}
+
+.wux-scroll-number__container {
+    display: flex;
+    align-items: flex-end;
+}
+
+.wux-scroll-number__scrollNumberItem {
+    color: #0079fe;
+    font-size: 48rpx;
+    font-weight: bold;
+    margin: 0 2rpx;
+    font-family: Microsoft YaHei;
+}
+
+.wux-scroll-number__numberItem {
+    /* border-radius: 8rpx; */
+    width: 56rpx;
+    height: 72rpx;
+    line-height: 72rpx;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+}
+
+.wux-scroll-number__numberDot {
+    margin: 0 2rpx;
+}
+
+.wux-scroll-number__scrollAni {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 2s ease-in-out 0s;
+}

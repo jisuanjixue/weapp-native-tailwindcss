@@ -1,0 +1,43 @@
+.form {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    .item-prod {
+        padding: 20rpx 20rpx 20rpx 0;
+    }
+    .item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        flex-wrap: nowrap; /* 防止子项换行 */
+    }
+
+    .col {
+        flex-grow: 1; /* 允许子项增长以填充额外空间 */
+        flex-shrink: 1; /* 允许子项缩小以避免溢出 */
+        flex-basis: 0%; /* 初始宽度为0%，让flex-grow控制宽度 */
+        min-width: 65%;
+    }
+
+    .col1,
+    .col2 {
+        flex-grow: 1; /* 允许子项增长以填充额外空间 */
+        flex-shrink: 1; /* 允许子项缩小以避免溢出 */
+        flex-basis: 0%; /* 初始宽度为0%，让flex-grow控制宽度 */
+    }
+
+    .radioText {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .inputText {
+        margin-top: -20rpx;
+    }
+    .image {
+        width: 40px;
+        height: 40px;
+    }
+}

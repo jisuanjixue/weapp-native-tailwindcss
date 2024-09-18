@@ -1,0 +1,81 @@
+/**index.wxss**/
+
+.indexPage {
+    background-color: rgba(245, 245, 245, 1);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.card-border {
+    border-radius: 20rpx;
+    .card-media {
+        padding: 15rpx 30rpx;
+    }
+    .wux-media__title {
+        color: #00642c;
+    }
+
+    .card__extra {
+        font-size: 20rpx;
+        color: #00642c;
+    }
+
+    .wux-card__bd {
+        padding: 12rpx 30rpx;
+    }
+}
+
+.card-border1 {
+    border-radius: 20rpx;
+    .wux-card__bd {
+        padding: 0;
+    }
+   
+}
+
+.cardBody {
+  padding: 0 0 30rpx 0;
+
+  .my-content {
+      width: 100vm;
+      text-align: center;
+      margin-top: 30rpx;
+      .names {
+          font-weight: 500;
+          margin-top: 30rpx;
+      }
+      .icon {
+          width: 100rpx;
+          height: 100rpx;
+      }
+  }
+}
+
+.banner {
+    overflow: hidden;
+
+    .banner-item {
+        border-radius: 0;
+
+        .banner-image {
+            // height: 166px;
+            // width: 390px;
+        }
+    }
+}
+
+.ellipsis {
+    font-size: 26rpx;
+    line-height: 1.5;
+    color: rgba(0, 0, 0, 0.45);
+}
+
+.shareBtn {
+    width: 100px;
+    opacity: 0;
+    position: absolute;
+    top: -100px;
+    bottom: 10px;
+    left: 250px;
+}

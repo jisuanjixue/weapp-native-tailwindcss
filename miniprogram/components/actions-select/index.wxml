@@ -1,0 +1,93 @@
+<van-action-sheet
+ show="{{ showAction }}"
+ z-index="1000"
+ title="{{desc}}"
+ bind:close="onActionClose"
+>
+	<view wx:if="{{showLogin}}" class="actionSheet">
+			<van-button
+			 slot="button"
+			 size="large"
+			 type="default"
+			 bind:click="login"
+			 block
+			 style="width: 90%"
+			 color="#00642C"
+			>
+				微信授权登录
+			</van-button>
+      <white-space  />
+		</view>
+		<view class="actionSheet" wx:else >
+		<van-button
+			 slot="button"
+			 size="large"
+			 type="default"
+			 bind:click="handLogin"
+			 block
+			 style="width: 90%"
+			 color="#00642C"
+			>
+				申请加盟
+			</van-button>
+			<white-space size="large" />
+			<van-button
+			 slot="button"
+			 loading="{{loadingP}}"
+			 size="large"
+			 type="primary"
+			 open-type="getPhoneNumber"
+			 bind:getphonenumber="getPhone"
+			 block
+			 style="width: 90%"
+			>绑定门店
+			</van-button>
+			<white-space size="large" />
+			<van-button
+			 slot="button"
+			 size="large"
+			 type="default"
+			 bind:click="onActionClose"
+			 block
+			 style="width: 90%"
+			>
+				取消
+			</van-button>
+	</view>
+</van-action-sheet>
+<van-dialog
+ use-slot
+ title="是否绑定当前门店"
+ show="{{ show }}"
+ show-cancel-button
+ bind:close="onClose"
+ bind:confirm="bindCurrentStore"
+ confirm-button-color="#00642C"
+>
+	<wing-blank>
+		<van-row gutter="5">
+			<van-col span="6" class="label">名称</van-col>
+			<van-col span="12">{{bindStore.name}}</van-col>
+		</van-row>
+		<white-space/>
+		<van-row gutter="15">
+			<van-col span="6" class="label">开店时间</van-col>
+			<van-col span="18">{{bindStore.openDate}}</van-col>
+		</van-row>
+		<white-space/>
+		<van-row gutter="15">
+			<van-col span="6" class="label">开店地址</van-col>
+			<van-col span="18">{{bindStore.address}}</van-col>
+		</van-row>
+		<white-space/>
+		<van-row gutter="15">
+			<van-col span="6" class="label">负责人</van-col>
+			<van-col span="18">{{bindStore.manager}}</van-col>
+		</van-row>
+		<van-row gutter="15">
+			<van-col span="6" class="label">状态</van-col>
+			<van-col span="18">{{bindStore.status}}</van-col>
+		</van-row>
+	</wing-blank>
+</van-dialog>
+

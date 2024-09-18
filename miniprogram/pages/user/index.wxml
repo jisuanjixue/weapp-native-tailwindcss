@@ -1,0 +1,234 @@
+<view class="indexPage">
+	<safe-area safeArea="top" wrapStyle="{{ { background: '#00642C' } }}" forceRender="{{ !isPC }}" />
+	<van-dialog id="van-dialog" />
+	<navbar
+	 title="我的门店"
+	 showInfo="{{true}}"
+	 hideLeftIcon="{{true}}"
+	 showSearch="{{false}}"
+	 height="550"
+	 backImage="../../assets/images/nav.png"
+	 isImage="{{true}}"
+	>
+		<view slot="info">
+			<white-space/>
+			<wing-blank size="large">
+				<van-row>
+					<van-col span="24">
+						<view class="light text--left name ">
+							{{user.data.name || user.name || user.shortName}}
+							<!-- {{user.data.shortAddress || user.shortAddress}} -->
+							({{user.data.type || user.type}})
+						</view>
+						<white-space/>
+						<view class="light text--left phone">
+							{{user.data.phoneHidden || user.phoneHidden}}
+							<van-button
+							 plain
+							 icon="edit"
+							 type="default"
+							 size="mini"
+							 bind:click="editPhone"
+							>修改
+							</van-button>
+						</view>
+						<white-space/>
+						<view class="date-container ">
+							<view class="light text--left date ">
+								您已经加入 {{user.data.shortName || user.shortName || ''}} 大家庭
+							</view>
+							<view class="year light ml--5">
+								{{user.data.sinceOpen.year || user.sinceOpen.year}}年</view>
+							<view class="day light ml--5">
+								{{user.data.sinceOpen.day || user.sinceOpen.day}}天
+							</view>
+						</view>
+					</van-col>
+					<!-- <van-col span="4">
+						<avatar
+						 l-class="avatar-bg"
+						 size="80"
+						 icon-size="80"
+						 icon="user"
+						 scale="{{true}}"
+						/>
+					</van-col> -->
+				</van-row>
+			</wing-blank>
+		</view>
+	</navbar>
+	<white-space/>
+	<view style="margin-top: {{capsuleBarHeight + 60}}rpx">
+		<wing-blank>
+			<view class="cardContain">
+				<card title="" bordered="{{false}}" wux-class="card-border">
+					<view slot="body" class="card-body">
+						<!-- <van-cell
+						 title="我的红包"
+						 is-link
+						 size="large"
+						 value=""
+						>
+						<view slot="icon">
+							<image  mode="aspectFit" class="phoneIcon" src="../../assets/images/lianxishangjia.png" />
+						</view>
+						  
+						</van-cell>
+						<van-cell
+						 title="我的代金券"
+						 is-link
+						 size="large"
+						 value=""
+						>
+						<view slot="icon">
+							<image  mode="aspectFit" class="phoneIcon" src="../../packageA/assets/images/shouhoufuwu.png" />
+						</view>
+						</van-cell> -->
+						<van-cell
+						 title="我的售后"
+						 is-link
+						 size="large"
+						 value=""
+						 url="/packageC/pages/myAfterSale/myAfterSale"
+						 center
+						>
+							<view slot="icon" class="leftIcon">
+								<image mode="aspectFit" class="phoneIcon" src="../../assets/images/wodeshouhou.png" />
+							</view>
+						</van-cell>
+						<van-cell
+						 title="管理我的资料"
+						 is-link
+						 size="large"
+						 value=""
+						 center
+						 url="/packageB/pages/editProfile/editProfile"
+						>
+							<view slot="icon" class="leftIcon">
+								<image mode="aspectFit" class="phoneIcon" src="../../assets/images/wodeziliao.png" />
+							</view>
+
+						</van-cell>
+						<van-cell
+						 title="修改手机号码"
+						 is-link="{{true}}"
+						 size="large"
+						 center
+						 value=""
+						 bind:click="editCellPhone"
+						>
+							<view slot="icon" class="leftIcon">
+								<image mode="aspectFit" class="phoneIcon" src="../../assets/images/xiugaishoujihao.png" />
+							</view>
+
+						</van-cell>
+						<van-cell
+						 title="了解加盟政策"
+						 is-link
+						 center
+						 size="large"
+						 value=""
+						 url="/packageB/pages/invitePolicy/invitePolicy"
+						>
+							<view slot="icon" class="leftIcon">
+								<image mode="aspectFit" class="phoneIcon" src="../../assets/images/lejiezhengce.png" />
+							</view>
+						</van-cell>
+						<van-cell
+						 title="邀请加盟"
+						 is-link
+						 center
+						 size="large"
+						 value=""
+						 url="/packageB/pages/inviteJoin/inviteJoin"
+						>
+							<view slot="icon" class="leftIcon">
+								<image mode="aspectFit" class="phoneIcon" src="../../assets/images/加盟.png" />
+							</view>
+
+						</van-cell>
+						<van-button open-type='share' bind:click="onShare" custom-class="shareBtn" custom-style="height: 65px"></van-button>
+					</view>
+				</card>
+				<white-space/>
+			</view>
+		</wing-blank>
+		<white-space size="large" />
+		<footer theme="dark" content="当前版本: {{version || 'v1.0.0'}}" wux-class="footer" />
+	</view>
+	<van-dialog
+	 use-slot
+	 title="修改手机号"
+	 show="{{ show }}"
+	 show-cancel-button="{{false}}"
+	 show-confirm-button="{{false}}"
+	 bind:close="onClose"
+	 bind:confirm="onConfirm"
+	 confirm-button-color="#00642C"
+	 close-on-click-overlay
+	>
+		<wing-blank>
+			<form is-submit-validate="{{isSubmitValidate}}" name="phoneForm" bind:linsubmit="submit">
+				<form-item
+				 tip-type="text"
+				 label="手机号:"
+				 name="phone"
+				 rules="{{phoneNumberRules}}"
+				 l-error-text-class="error"
+				>
+					<van-field
+					 value="{{ phoneForm.phone }}"
+					 placeholder="请输入手机号"
+					 border="{{ false }}"
+					 id="phone"
+					 data-name="phone"
+					 bind:change="onValueChange"
+					/>
+				</form-item>
+				<form-item
+				 tip-type="text"
+				 label="验证码:"
+				 name="smsCode"
+				 rules="{{smsCodeRules}}"
+				 l-error-text-class="error"
+				>
+					<van-field
+					 center
+					 clearable
+					 value="{{ phoneForm.smsCode }}"
+					 placeholder="请输入短信验证码"
+					 border="{{ false }}"
+					 id="smsCode"
+					 data-name="smsCode"
+					 use-button-slot
+					 bind:change="onValueChange"
+					>
+						<van-button
+						 slot="button"
+						 size="small"
+						 type="primary"
+						 bind:click="send"
+						>
+							{{ c2 || '获取验证码' }}
+						</van-button>
+					</van-field>
+				</form-item>
+				<white-space size="large" />
+				<view slot="submit" class="bottom">
+					<van-button
+					 type="primary"
+					 color="#00642C"
+					 size="large"
+					 custom-class="xun"
+					>
+						<view class="textname"> 提交 </view>
+					</van-button>
+				</view>
+			</form>
+		</wing-blank>
+		<white-space/>
+	</van-dialog>
+		<actions-select showAction="{{ showAction }}" bind:onActionClose="onActionClose" />
+	<safe-area safeArea="bottom" wrapStyle="{{ { background: 'rgba(245, 245, 245, 1)' } }}" forceRender="{{ !isPC }}" />
+</view>
+

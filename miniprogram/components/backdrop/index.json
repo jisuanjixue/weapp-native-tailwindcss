@@ -1,0 +1,6 @@
+{
+    "component": true,
+    "usingComponents": {
+        "animation-group": "/components/animation-group/index"
+    }
+}

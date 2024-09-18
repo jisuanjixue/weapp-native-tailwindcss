@@ -1,0 +1,17 @@
+{
+    "usingComponents": {
+        "van-icon": "@vant/weapp/icon/index",
+        "van-cell": "@vant/weapp/cell/index",
+        "footer": "/components/footer/index",
+        "van-button": "@vant/weapp/button/index",
+        "van-row": "@vant/weapp/row/index",
+        "van-col": "@vant/weapp/col/index",
+        "van-dialog": "@vant/weapp/dialog/index",
+        "van-field": "@vant/weapp/field/index",
+        "form-item": "/components/form-item/index",
+        "form": "/components/form/index",
+        "ellipsis": "/components/ellipsis/index",
+        "actions-select": "/components/actions-select/index"
+    },
+    "navigationStyle": "custom"
+}

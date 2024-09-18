@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/home/index",
+       "pages/user/index"
+  ],
+  "window": {
+    "navigationStyle": "custom",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "white"
+},
+"tabBar": {
+  "color": "#555",
+  "selectedColor": "#00642C",
+  "backgroundColor": "#FFFFFF",
+  "borderStyle": "black",
+  "list": [
+      {
+          "pagePath": "pages/home/index",
+          "iconPath": "./assets/images/unhome.png",
+          "selectedIconPath": "./assets/images/home.png",
+          "text": "首页"
+      },
+      {
+          "pagePath": "pages/user/index",
+          "iconPath": "./assets/images/unme.png",
+          "selectedIconPath": "./assets/images/me.png",
+          "text": "用户中心"
+      }
+  ]
+},
+  "usingComponents": {
+    "van-config-provider": "@vant/weapp/config-provider/index",
+    "van-dialog": "@vant/weapp/dialog/index",
+    "navbar": "/components/navbar/index",
+    "safe-area": "/components/safe-area/index",
+    "white-space": "/components/white-space/index",
+    "wing-blank": "/components/wing-blank/index",
+    "card": "/components/card/index"
+},
+"plugins": {},
+"requiredBackgroundModes": ["location"],
+
+"lazyCodeLoading": "requiredComponents",
+"singlePage": {
+    "navigationBarFit": "float"
+},
+"sitemapLocation": "sitemap.json",
+  "componentFramework": "glass-easel"
+}

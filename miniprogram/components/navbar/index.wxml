@@ -1,0 +1,16 @@
+<capsule
+  capsule-color="white"
+  disable-home="{{false}}"
+  disable-back="{{false}}"
+  hidden-capsule="{{hideLeftIcon}}"
+  home-page="/pages/home/index"
+  title-color="#ffffff"
+  title="{{title}}"
+  bg-color="{{isImage? 'transparent' : '#00642C'}}"
+  bind:linlefttap="handBack"
+>
+  <image class="capsule-bar-bg" style="height:{{capsuleBarHeight + height}}rpx;" src="{{backImage}}" wx:if="{{isImage}}"></image>
+   <view class="info" wx:if="{{showInfo}}">
+    <slot name="info"></slot>
+  </view>
+</capsule>

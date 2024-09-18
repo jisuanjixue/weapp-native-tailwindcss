@@ -1,0 +1,52 @@
+<view class="form">
+	<van-checkbox-group bind:change="onChange" value="{{ selected }}" style="width: 100vw">
+		<block wx:for="{{list}}" wx:key="*this" wx:if="{{list.length > 0 }}">
+			<view class="item">
+				<view class="col">
+					<van-checkbox name="{{ item.id }}" disabled="{{false}}">
+						<media
+						 thumb="{{item.productSku.product.mainImage}}"
+						 title="{{item.productSku.product.name}}"
+						 thumbStyle="width: 40px;height: 40px"
+						 label="X{{item.quantityText}}"
+						 align="start"
+						 wux-class="item-prod"
+						/>
+					</van-checkbox>
+				</view>
+				<!-- <view
+				 class="clo1"
+				 style="padding-right: 20rpx;"
+				 bind:tap="handSelect"
+				 data-id="{{item.id}}"
+				>
+					{{item.type}}
+				</view> -->
+				<view class="col2">
+					<input-number
+					 shape="circle"
+					 color="calm"
+					 slot="footer"
+					 disabled="{{ false }}"
+					 value="{{ item.quantity }}"
+					 default-value="0"
+					 controlled
+					 min="{{ 0 }}"
+					 max="{{ 1000 }}"
+					 data-id="{{item.id}}"
+					 data-max="{{item.quantityText}}"
+					 bind:change="onNumberChange"
+					/>
+				</view>
+			</view>
+		</block>
+	</van-checkbox-group>
+	<!-- <van-action-sheet
+	 show="{{ show }}"
+	 actions="{{ actions }}"
+	 bind:close="onClose"
+	 bind:select="onSelect"
+	 root-portal="{{true}}"
+	/> -->
+</view>
+

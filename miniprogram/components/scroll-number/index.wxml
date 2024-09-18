@@ -1,0 +1,21 @@
+<view class="wux-class {{ classes.wrap }}">
+    <view class="{{ classes.container }}">
+        <block wx:for="{{valArr}}" wx:key="index">
+            <view wx:if="{{item.isNaN}}" class="{{classes.scrollNumberItem}} {{classes.numberDot}}" style="font-size: {{fontSize}}rpx; color: {{color}};">
+                {{item.val}}
+            </view>
+            <view wx:else class="numberItem {{ classes.numberItem}}" style="font-size: {{fontSize}}rpx; font-weight: {{bold ? 'bold' : ''}};">
+                <view class="{{classes.scrollAni}}" style="{{aniArr[index]}}">
+                    <view
+                        wx:for="{{numArr}}"
+                        wx:for-item="num"
+                        wx:for-index="idx"
+                        wx:key="idx"
+                    >
+                        {{num}}
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+</view>

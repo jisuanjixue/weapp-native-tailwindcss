@@ -1,0 +1,30 @@
+{
+    "id": "4643975",
+    "name": "retail",
+    "font_family": "iconfont",
+    "css_prefix_text": "icon-ali-",
+    "description": "",
+    "glyphs": [
+        {
+            "icon_id": "5379537",
+            "name": "电话",
+            "font_class": "dianhua",
+            "unicode": "e659",
+            "unicode_decimal": 58969
+        },
+        {
+            "icon_id": "2162870",
+            "name": "联系商家",
+            "font_class": "lianxishangjia",
+            "unicode": "e630",
+            "unicode_decimal": 58928
+        },
+        {
+            "icon_id": "8288851",
+            "name": "减号",
+            "font_class": "jianhao",
+            "unicode": "e84f",
+            "unicode_decimal": 59471
+        }
+    ]
+}

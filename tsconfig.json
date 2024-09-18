@@ -1,0 +1,55 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "jsx": "preserve",
+    "lib": [
+      "ES2020",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "allowImportingTsExtensions": true,
+    "allowJs": true,
+    "strict": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noEmit": true,
+    "isolatedModules": true,
+    "skipLibCheck": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+    "alwaysStrict": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "typeRoots": ["./typings"],
+    "types": ["miniprogram-api-typings"],
+    "paths": {
+        "@vant/weapp/*": ["./node_modules/@vant/weapp/dist/"],
+        "@preact/signals-core/*": ["./node_modules/@preact/signals-core/dist/"],
+    }
+  },
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ],
+  "include": [
+    "./**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "baseUrl": ".",
+  "paths": {
+    "@/*": [
+      "./*"
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+**/*.md
+**/*.svg
+**/*.ejs
+**/*.html
+package.json
+/miniprogram/miniprogram_npm
+/typings/types/wx

@@ -1,0 +1,17 @@
+{
+    "singleQuote": true,
+    "trailingComma": "all",
+    "printWidth": 80,
+    "tabWidth": 4,
+    "semi": true,
+    "importOrder": [
+        "^../../miniprogram_npm/(.*)$",
+        "^../../services/(.*)$",
+        "^../../stores/(.*)$",
+        "^../../utils/(.*)$"
+    ],
+    "importOrderSeparation": true,
+    "importOrderGroupNamespaceSpecifiers": true,
+    "importOrderSortSpecifiers": true,
+    "plugins": ["@trivago/prettier-plugin-sort-imports"]
+}

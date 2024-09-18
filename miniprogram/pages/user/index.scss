@@ -1,0 +1,60 @@
+.indexPage {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: rgba(245, 245, 245, 1);
+    height: 100%; /* 确保容器充满视口高度 */
+
+    @mixin component {
+        font-size: 18px;
+        font-weight: 800;
+    }
+
+    .name {
+        @include component;
+    }
+    .phone {
+        font-size: 14px;
+        font-weight: 300;
+    }
+
+    .date-container {
+        display: flex; // 设置为flex布局
+        align-items: center; // 垂直居中对齐
+        min-height: 20px;
+        .date {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .year {
+            @include component;
+        }
+        .day {
+            @include component;
+        }
+    }
+    .card-border {
+        border-radius: 20rpx;
+    }
+
+    .shareBtn {
+        width: 90%;
+        opacity: 0;
+        position: absolute;
+        bottom: 10px;
+    }
+
+    .footer {
+        margin-top: 10vh;
+        background-color: transparent;
+    }
+
+    .phoneIcon {
+        width: 40rpx;
+        height: 40rpx;
+    }
+    .leftIcon {
+        padding: 15rpx 15rpx 0 0;
+    }
+}
